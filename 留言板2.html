@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script type="text/javascript">
+
+
+        function fasonghanshu (){
+            //获得文本框，按钮，内容等节点
+            var wenbenkaung = document.getElementById("wenbenkaung");
+            var liuyan = document.getElementById("liuyan");
+            var neirong = document.getElementById("neirong");
+
+            //获取文本框内容
+            var huoquwenbenkuang = wenbenkaung.value;
+
+            //创建li节点
+            var lijiedian = document.createElement("li");
+
+            //创建删除节点
+            var shanchu = document.createElement("a");
+            shanchu.setAttribute("class","dianjishanchu");
+            shanchu.innerHTML = "      删除";
+
+            //创建文本节点，相当于把文本内容放到一个p标签内
+            var pjiedian = document.createTextNode(huoquwenbenkuang);
+
+            lijiedian.appendChild(pjiedian);
+            lijiedian.appendChild(shanchu);
+            neirong.appendChild(lijiedian);
+
+            //获取li标签
+            var lisuoyoubiaoqian = document.getElementsByTagName("li");
+
+            //如果 lisuoyoubiaoqian 长度大于0，在已有的子节点前面进行添加
+            // 反之，直接添加
+            if (lisuoyoubiaoqian.length > 0) {
+                //insertBefore 在已有的子节点前面进行添加
+                //lijiedian   创建新的子节点
+                //lisuoyoubiaoqian[0]   lisuoyoubiaoqian中的第一个节点
+                neirong.insertBefore(lijiedian, lisuoyoubiaoqian[0]);
+            } else {
+                neirong.appendChild(lijiedian);
+            } 
+            wenbenkaung.value ="";
+            //删除功能
+            var shanchujiedianshuzu = document.getElementsByClassName("dianjishanchu");
+            for(var i  =0;i<shanchujiedianshuzu.length;i++){
+                shanchujiedianshuzu[i].onclick = function(){
+                    neirong.removeChild(this.parentNode);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="wenbenkaung"/>
+<input type="button" value="留言" id="liuyan" onclick="fasonghanshu()">
+<ul id="neirong">
+
+
+
+</ul>
+</body>
+</html>

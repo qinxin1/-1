@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			th,td{
+				width: 100px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			
+			input{
+				width: 30px;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<table border="1" cellspacing="0" cellpadding="10">
+			<tr>
+				<th>商品</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>小米5</td>
+				<td>3000</td>
+				<td><input type="button" class="jian" value="-" /> <span>0</span> <input type="button" class="jia" value="+" /></td>
+				<td class="xj">0</td>
+				<td><input type="button" class="sc" value="删除" /></td>
+			</tr>
+			<tr>
+				<td>三星s7</td>
+				<td>5000</td>
+				<td><input type="button" class="jian" value="-" /> <span>0</span> <input type="button" class="jia" value="+" /></td>
+				<td class="xj">0</td>
+				<td><input type="button" class="sc" value="删除" /></td>
+			</tr>
+			<tr>
+				<td>iphone7</td>
+				<td>6000</td>
+				<td><input type="button" class="jian" value="-" /> <span>0</span> <input type="button" class="jia" value="+" /></td>
+				<td class="xj">0</td>
+				<td><input type="button" class="sc" value="删除" /></td>
+			</tr><tr>
+				<td>华为9</td>
+				<td>4000</td>
+				<td><input type="button" class="jian" value="-" /> <span>0</span> <input type="button" class="jia" value="+" /></td>
+				<td class="xj">0</td>
+				<td><input type="button" class="sc" value="删除" /></td>
+			</tr>
+			<tr>
+				<td>oppo9</td>
+				<td>2500</td>
+				<td><input type="button" class="jian" value="-" /> <span>0</span> <input type="button" class="jia" value="+" /></td>
+				<td class="xj">0</td>
+				<td><input type="button" class="sc" value="删除" /></td>
+			</tr>
+			<tr>
+				<td>格力9</td>
+				<td>1000</td>
+				<td><input type="button" class="jian" value="-" /> <span>0</span> <input type="button" class="jia" value="+" /></td>
+				<td class="xj">0</td>
+				<td><input type="button" class="sc" value="删除" /></td>
+			</tr>
+			<tr>
+				<td colspan="5">合计：<span class="hj"></span></td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			$(function  () {
+				$(".sc").click(function () {
+					$(this).parent().parent().remove()
+				})
+				
+				$(".jia").click(function () {
+					var $t=$(this).siblings("span").html()
+					$(this).siblings("span").html(++$t)
+					var xj=$(this).parent().prev().html()
+					$(this).parent().next().html(xj*$t)
+				})
+				$(".jian").click(function () {
+					var $r=$(this).next().html()
+					if ($r>0) {
+						$(this).next().html(--$r)
+					}
+					var xj1=$(this).parent().prev().html()
+					$(this).parent().next().html(xj1*$r)
+	
+				})
+				$(":button").click(function () {
+					var tt=0;
+					$(".xj").each(function () {
+						tt+=parseInt($(this).text())
+					})
+					$(".hj").html(tt)
+				})
+				
+				
+				
+				
+				
+				
+				
+			})
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script>
+        function getColor() 
+        {
+           var num= ""+Math.round(Math.random()*1000000);
+           while(num.length<6)
+           {
+           	num="0"+num;
+           }
+           document.body.style.background="#"+num;
+        }       
+    </script>
+</head>
+<body>
+    <input type="button" value="点击我" onclick="getColor();"/>
+</body>
+</html>

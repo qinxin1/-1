@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		#box{
+			background: pink;
+			padding: 10px;
+			margin: 10px auto;
+			width: 480px;
+		}
+		#box div{
+			margin-bottom: 10px;
+		}
+		#tit{
+			width: 440px;
+			height: 30px;
+			padding: 0 5px;
+		}
+		#con{
+			width: 440px;
+			height: 130px;
+			padding: 0 5px;
+		}
+		#list h3{
+			background: white;
+		}
+		#list a{
+			float: right;
+			cursor: pointer;
+			color: red;
+		}
+		#list p{
+			background: yellow;
+			text-indent: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div>
+			<span>标题：</span>
+			<input type="text" id="tit">
+		</div>
+		<div>
+			<span>内容：</span>
+			<textarea id="con"></textarea>
+		</div>
+		<div style="text-align:right">
+			<button id="btn">发布</button>
+		</div>
+		<div>
+			<h3>分享新鲜事...</h3>
+		</div>
+		<ul id="list">
+			
+		</ul>
+	</div>
+	<script>
+		var tit=document.getElementById("tit");
+		var con=document.getElementById("con");
+		var btn=document.getElementById("btn");
+		var list=document.getElementById("list")
+		btn.onclick=function(){
+			if(tit.value==""||con.value==""){
+				alert("标题内容不可为空")
+			}else{
+				var oli=document.createElement("li");
+				oli.innerHTML='<h3>'+tit.value+'<a>删除</a></h3><p>'+con.value+'</p>';
+				if(list.children.length==0){
+					list.appendChild(oli)
+					//在末尾添加一个oli，包括了标题和内容
+				}else{
+					list.insertBefore(oli,list.children[0]);
+					//list.children[0]之前插入oli，达到最新消息置顶效果
+				}
+			}
+			var as=document.getElementsByTagName('a');
+			for(var i=0;i<as.length;i++){
+				as[i].onclick=function(){
+					list.removeChild(this.parentNode.parentNode);
+					//删除父节点的父亲节点，就是h3的父节点li
+				}
+			}
+			tit.value="";
+			con.value="";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    function a (){
+        var nodeUl = document.getElementById("nodeUL1");
+
+        //document.write(nodeUl.firstElementChild.innerHTML);
+        /*var a = nodeUl.firstElementChild;
+        a.style.background = "red";*/
+
+        //document.write(nodeUl.parentNode.parentNode.lastElementChild.innerHTML);
+        //document.write(nodeUl.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML);
+        //document.write(nodeUl.parentNode.previousElementSibling.previousElementSibling.innerHTML);
+        //document.write(nodeUl.parentNode.firstElementChild.innerHTML);
+        //document.write(nodeUl.childElementCount);
+
+
+    }
+
+
+
+
+</script>
+<ul id="nodeUL">
+    <li>首页</li>
+    <li>编辑</li>
+    <li name="lijia">
+        插入
+        <ul id="nodeUL1"> <!--  选取这个为基础节点 -->
+            <li>获取parentNode</li>
+            <li>获取childNodes</li>
+            <li>获取firstChild</li>
+        </ul>
+    </li>
+    <li>转义</li>
+    <li>跳转</li>
+    <li>运行</li>
+</ul>
+<input type="button" value="点我一下" onclick="a()"/>
+</body>
+</html>

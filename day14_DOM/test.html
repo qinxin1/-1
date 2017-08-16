@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p id="p">
+    <div id="txt"class="c">
+        <span>
+        </span>
+        </div>
+    </p>
+    <input type="radio"name="a"class="c"/>
+    <input type="radio"name="a"class="c"/>
+    <input type="radio"name="a"/>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        var txt1 = document.getElementById("txt");
+        var A = document.getElementsByName("a");//得到一个数组，长度为3.
+        var p = document.getElementById("p");
+        //A[0]，A[1],A[2].
+        document.write(A.length);
+        var B = document.getElementsByTagName("li");
+        document.write(B.length);
+        var C = document.getElementsByClassName("c");
+        document.write(C.length);
+        document.write(txt1.tagName);
+        txt1.innerHTML = "哈哈哈，笑话你";
+        document.write(txt1.innerText);
+        document.write("<br>")
+        document.write(p.innerText);
+
+
+    </script>
+</body>
+</html>

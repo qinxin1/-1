@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #share{
+            width:100px;
+            height:250px;
+            position:fixed;
+            top:10%;
+            left:-100px;
+            background: #b1e2d9;
+        }
+        #share>a{
+            display:inline-block;
+            width:18px;
+            font-size: 14px;
+            padding:5px;
+            position:absolute;
+            right:-28px;
+            background: #46d5ff;
+            line-height:1.5em;
+            text-decoration: none;
+            color:#fff;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="share">
+         <a href="javascript: void(0)"id="share-btn">分享</a>
+    </div>
+</body>
+<script>
+    var left = -100;
+    var isOpen=false;
+    window.onload=function(){
+            document.getElementById("share-btn").onclick=function(){
+            var share=document.getElementById("share");
+                if(!isOpen){
+               var interval=setInterval(function(){
+                 left+=10;
+                 share.style.left = left+"px";
+                if(left==0){
+                    clearInterval(interval);
+                }
+            },50);
+
+        isOpen=true;
+            }
+        else{
+            var interval=setInterval(function(){
+            left-=10;
+            share.style.left = left+"px";
+            if(left==-100){
+                clearInterval(interval);
+            }
+          },50);
+           isOpen = false;}
+        }
+    }
+
+</script>
+</html>

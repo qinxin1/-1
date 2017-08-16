@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>RunJS</title>
+		<style>
+			.clock {
+				width: 200px;
+				height: 200px;
+				border-radius: 100%;
+				position: relative;
+				background-image: url(http://sandbox.runjs.cn/uploads/rs/193/ybc7pl9z/6880637_10180600137.jpg);
+				background-size: 100%;
+			}
+			
+			.line {
+				height: 4px;
+				background-color: red;
+				margin-left: -15px;
+				margin-top: -2px;
+			}
+			
+			.original {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 1px;
+				height: 1px;
+				float: left;
+			}
+			
+			.clock>.point {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -5px;
+				margin-top: -6px;
+				width: 3px;
+				height: 3px;
+				padding: 5px;
+				background-color: red;
+				border-radius: 13px;
+			}
+			
+			.original.seconds {
+				-webkit-animation: rotate_origin 60s linear infinite;
+				animation: rotate_origin 60s linear infinite;
+			}
+			
+			.original.seconds>.line {
+				background-color: red;
+				width: 100px;
+				height: 2px;
+			}
+			
+			.original.minutes {
+				-webkit-animation: rotate_origin 3600s linear infinite;
+				animation: rotate_origin 3600s linear infinite;
+			}
+			
+			.original.minutes>.line {
+				background-color: blue;
+				width: 80px;
+				height: 3px;
+			}
+			
+			.original.hours {
+				-webkit-animation: rotate_origin 86400s linear infinite;
+				animation: rotate_origin 86400s linear infinite;
+			}
+			
+			.original.hours>.line {
+				width: 60px;
+				background-color: green;
+			}
+			
+			@-webkit-keyframes rotate_origin {
+				from {
+					-webkit-transform: rotateZ(0deg);
+				}
+				to {
+					-webkit-transform: rotateZ(360deg);
+				}
+			}
+			
+			@keyframes rotate_origin {
+				from {
+					transform: rotateZ(0deg);
+				}
+				to {
+					transform: rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="clock">
+			<div class="original hours">
+				<div class="line"></div>
+			</div>
+			<div class="original minutes">
+				<div class="line"></div>
+			</div>
+			<div class="original seconds">
+				<div class="line"></div>
+			</div>
+			<div class="point"></div>
+
+		</div>
+	</body>
+
+</html>

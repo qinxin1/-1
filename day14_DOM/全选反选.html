@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="">
+   <div>全选 <input type="checkbox"id="qx"onclick="abcd();"/>
+        反选 <input type="checkbox"id="fx"onclick="eeeeee();"/>
+   </div>
+   <div>单选1<input type="checkbox"class="dx"/></div>
+   <div>单选2<input type="checkbox"class="dx"/></div>
+   <div>单选3<input type="checkbox"class="dx"/></div>
+   <div>单选4<input type="checkbox"class="dx"/></div>
+   <div>单选5<input type="checkbox"class="dx"/></div>
+
+</form>
+   <script>
+		// 获取全选的ID
+       var qx = document.getElementById("qx");
+	   
+       var dx = document.getElementsByClassName("dx");//获取到所有类名为dx的元素，并且是一个数组
+       
+	   //获取反选的
+	   var fx = document.getElementById("fx");
+	   
+	   //全选执行方法
+       function abcd(){
+           //alert(qx.checked);//返回全选按钮checked 的属性值
+           for(var i = 0;i<dx.length;i++){
+               dx[i].checked = qx.checked;
+           }
+       }
+	   
+	   //反选执行方法
+       function eeeeee(){
+           for(var i = 0;i<dx.length;i++){
+               if(dx[i].checked==true){//哪个是true的话
+                   dx[i].checked=false;
+               }else{
+                   dx[i].checked=true;
+               }
+           }
+       }
+   </script>
+</body>
+</html>

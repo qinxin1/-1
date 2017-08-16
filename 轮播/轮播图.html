@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				margin: 20px auto 0;
+				width: 300px;
+				height: 300px;
+				overflow: hidden;
+				position: relative;
+			}
+			#content{
+				height: 800px;
+				width: 1500px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#content>img {
+				width: 300px;
+				height: 300px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="content">
+				<img src="img/453.jpg"/>
+				<img src="img/59.jpg"/>
+				<img src="img/453.jpg"/>
+				<img src="img/59.jpg"/>
+				<img src="img/timg (8).jpg" />
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function roll(){
+			//获取必要的元素
+			var box = document.getElementById("box");
+			var content = document.getElementById("content");
+			//移动的增量
+			var speed = 0;
+			 function move(){
+			 	var timer = setInterval(function(){
+			 		//增量  让元素通过定位  移动起来
+			 		speed-=2;
+			 		content.style.left = speed +'px';
+			 		//判断是否到最后
+			 		//由于最后一张是照骗  按照实际计算
+			 		if(content.offsetLeft <= -1200){
+			 			//一张300px，工5张
+			 			content.style.left = 0 ;
+			 			speed = 0;
+			 		}
+			 	},20)
+			 }
+			 move();
+		}
+		roll();
+	</script>
+</html>

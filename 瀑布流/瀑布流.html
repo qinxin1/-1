@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+	<title>瀑布流</title>
+	<link rel="stylesheet" href="reset.css">
+	<style type="text/css">
+		#box{
+			width:1080px;
+			margin:10px auto;
+			overflow:hidden;
+			border: red 1px solid;
+		}
+		#box ul{
+			width:250px;
+			margin:0px 10px;
+			float:left;
+		}
+		#box ul li{
+			width:248px;
+			border:1px solid black;
+		}
+		#box ul li img{
+			width:248px;
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li>
+				<!-- <img src="images/1.png"> -->
+			</li>
+		</ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var box=document.getElementById('box');
+	var uls=box.children;
+	function appd(){
+		var oli=document.createElement('li'); 
+		var x=Math.ceil(Math.random()*35);
+		oli.innerHTML='<img src="images/'+x+'.png">';
+		var ul1=uls[0].offsetHeight;
+		var ul2=uls[1].offsetHeight;
+		var ul3=uls[2].offsetHeight;
+		var ul4=uls[3].offsetHeight;
+		var min=Math.min(ul1,ul2,ul3,ul4);
+		var aa;
+		for(var i=0;i<uls.length;i++){
+			if(uls[i].offsetHeight==min){
+				aa=uls[i];
+			}	
+		}
+		aa.appendChild(oli);
+	}
+	for(var i=0;i<9;i++){
+		appd();
+	}
+	window.onscroll=function(){
+		//上卷的距离
+		var winST=document.body.scrollTop||document.documentElement.scrollTop;
+		var winH=document.documentElement.clientHeight;//浏览器窗口高度
+		var docH=document.documentElement.offsetHeight;//文档高度
+		var cha=docH-winH-winST;
+		if(cha<500){
+			for(var i=0;i<16;i++){
+				appd();
+			}
+		}
+	}
+</script>
+</html>

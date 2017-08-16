@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>js01-图片切换</title>
+		<link rel="stylesheet" rev="stylesheet" href="css/01.css" />
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			body {
+				background-color: #fff;
+			}
+			
+			ul li {
+				list-style: none;
+			}
+			
+			.f_left {
+				border: solid 1px #e9e7e8;
+				padding: 1px;
+				width: 345px;
+				height: 385px;
+				overflow: hidden;
+				margin: 0px auto;
+			}
+			/*f_left 图片切换样式*/
+			
+			.animation {
+				height: 385px;
+			}
+			
+			.container {
+				width: 345px;
+				height: 220px;
+				position: relative;
+			}
+			
+			#idSlider {
+				position: relative;
+				height: 220px;
+				overflow: hidden;
+			}
+			
+			#idSlider li {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: none;
+				z-index: 5;
+			}
+			
+			.num {
+				position: absolute;
+				bottom: -161px;
+				right: 4px;
+				z-index: 20;
+			}
+			
+			.num li {
+				text-align: center;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				margin: 1px;
+				float: left;
+				color: #fff;
+				cursor: pointer;
+				background: url(1ova6zwo/libg.jpg) no-repeat;
+				font-size: 12px;
+			}
+			
+			.num li.on {
+				background: url(1ova6zwo/hoverlibg.jpg) no-repeat;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			
+			.titlebox {
+				width: 317px;
+				height: 110px;
+				overflow: hidden;
+				margin: 14px;
+			}
+			
+			#titles li {
+				height: 110px;
+				font-size: 12px;
+				text-align: left;
+			}
+			
+			#titles li span.titlespan {
+				color: #b10101;
+				font-size: 14px;
+				font-weight: bold;
+				display: block;
+				margin-bottom: 8px;
+			}
+			
+			#titles li span.titlep p {
+				text-indent: 24px;
+				font-size: 12px;
+				line-height: 2.3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="f_left">
+			<div class="animation">
+				<div id="idContainer" class="container">
+					<ul id="idSlider">
+						<li>
+							<a href="#">
+								<img width="345" height="220" src="1ova6zwo/imgslide1.jpg"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img width="345" height="220" src="1ova6zwo/imgslide2.jpg"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img width="345" height="220" src="1ova6zwo/imgslide3.jpg"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img width="345" height="220" src="1ova6zwo/imgslide4.jpg"></img>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img width="345" height="220" src="1ova6zwo/imgslide5.jpg"></img>
+							</a>
+						</li>
+					</ul>
+					<ul id="idSliderIcon" class="num">
+						<li num='0'>1</li>
+						<li num='1'>2</li>
+						<li num='2'>3</li>
+						<li num='3'>4</li>
+						<li num='4'>5</li>
+					</ul>
+				</div>
+				<div class="titlebox">
+					<ul id="titles">
+						<li style="display:none;">
+							<span class="titlespan">
+										<a href="#">喜气洋洋迎元旦，欢欢乐乐过新年</a>
+									</span>
+							<span class="titlep">
+										<p>辰龙回宫欣报捷，巳蛇出洞喜迎新，12月28日，明珠学校“新年新愿，爱满校园”2013元旦联欢会在...</p>
+										<a href="#">详细>></a>
+									</span>
+						</li>
+						<li style="display:none;">
+							<span class="titlespan">
+										<a href="#">明珠喜迎新生</a>
+									</span>
+							<span class="titlep">
+										<p>告别了炎夏的骚动与不安，凉爽怡人的秋季向我们展开了笑颜。在9月1日这个特别的日子里，我们...</p>
+										<a href="#">详细>></a>
+									</span>
+						</li>
+						<li style="display:none;">
+							<span class="titlespan">
+										<a href="#">明珠学校掀起学习贯彻十八大会议精神热潮</a>
+									</span>
+							<span class="titlep">
+										<p>日前，随着党的十八大盛会的胜利召开，明珠学校积极学习贯彻十八大会议精神的热潮亦在不知不觉...</p>
+										<a href="#">详细>></a>
+									</span>
+						</li>
+						<li style="display:none;">
+							<span class="titlespan">
+										<a href="#">关注专业 聚焦发展</a>
+									</span>
+							<span class="titlep">
+										<p>2012年11月19日，明珠学校“关注专业 聚焦发展”唱响教师专业发展主旋律主题活动正式启动。...</p>
+										<a href="#">详细>></a>
+									</span>
+						</li>
+						<li style="display:none;">
+							<span class="titlespan">
+										<a href="#">明珠学校从现在起航</a>
+									</span>
+							<span class="titlep">
+										<p>2012年9月4日，伴着清晨的阳光，海港区明珠学校在学校操场举行明珠学校历史上的有纪念意义...</p>
+										<a href="#">详细>></a>
+									</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script>
+		(function() {
+			var imgul = document.getElementById("idSlider");
+			var iconul = document.getElementById("idSliderIcon");
+			var titleul = document.getElementById("titles");
+			var imgli = imgul.getElementsByTagName("li");
+			var iconli = iconul.getElementsByTagName("li");
+			var titleli = titleul.getElementsByTagName("li");
+			/*img*/
+			var index = 0;
+			var timer = null;
+
+			function act(index, cur) {
+				if(cur != undefined) {
+					imgli[cur].style.display = 'none';
+					iconli[cur].className = '';
+					titleli[cur].style.display = 'none';
+				}
+				imgli[index].style.display = 'block';
+				iconli[index].className = 'on';
+				titleli[index].style.display = 'block';
+			}
+
+			function play() {
+				if(timer == null) {
+					act(index);
+					timer = setInterval(play, 2000);
+				} else {
+					var cur = (index == 0) ? imgli.length - 1 : index - 1;
+					act(index, cur);
+				}
+				if(index++ >= imgli.length - 1) {
+					index = 0;
+				}
+			}
+
+			for(var i = 0, len = iconli.length; i < len; i++) {
+				iconli[i].onmouseover = function() {
+					clearInterval(timer);
+					var cur = index == 0 ? len - 1 : index - 1;
+					index = this.getAttribute("num");
+					act(index, cur);
+					if(index++ >= imgli.length - 1) {
+						index = 0;
+					}
+				}
+				iconli[i].onmouseout = function() {
+					timer = setInterval(play, 2000);
+				}
+			}
+
+			play();
+
+			/*
+				注意事项：1、鼠标悬上时，处理完操作后，让index自增，保证鼠标移出时正常循环
+						  2、注意cur的值和index的关系，index操作到最后一个时index值为0不是5
+			*/
+
+		})();
+	</script>
+
+</html>

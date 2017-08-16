@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #redDiv {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="redDiv"></div>
+</body>
+<script type="text/javascript">
+    var redDiv = document.querySelector("#redDiv");
+    redDiv.onmousedown = function () {
+        document.onmousemove = function (ev) {
+            var e = ev || window.event;
+            var x = e.clientX - redDiv.offsetWidth / 2 + "px";
+            var y = e.clientY - redDiv.offsetHeight / 2 + "px";
+            redDiv.style.left = x;
+            redDiv.style.top = y;
+        }
+    }
+    // 当鼠标抬起时，把鼠标移动事件清空
+    redDiv.onmouseup = function () {
+        document.onmousemove = null;
+    }
+</script>
+</html>

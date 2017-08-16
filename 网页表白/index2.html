@@ -1,0 +1,111 @@
+﻿﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>我们的爱情故事</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        } 
+    </style>
+    <link href="style/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/garden.js"></script>
+    <script type="text/javascript" src="style/functions.js"></script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments">/**</span><br />
+                <span class="space"/><span class="comments">*因为我是一个程序员,</span><br />
+                <span class="space"/><span class="comments">* 所以我写一些代码来显示我对你的爱.</span><br />
+                <span class="space"/><span class="comments">*/</span><br />
+                Boy i = <span class="keyword">new</span> Boy(<span class="string">"兴哥"</span>);<br />
+                Girl u = <span class="keyword">new</span> Girl(<span class="string">"小雨"</span>);<br />
+                <span class="comments">// 2014年2月2日,你说你不爱我. </span><br />
+                i.love(u);<br />
+                <span class="comments">// 但是......，你说，我们还是好朋友。</span><br />
+                u.sayOtherthing();<br />
+                <span class="comments">// 当时，我问你原因。</span><br />
+                <span class="keyword">var</span> reason=i.ask(u);<br />
+                <span class="comments">// 你说，我们并没有足够的了解对方。</span><br />
+                $("body").append(reason);<br />
+                <span class="comments">// 你说，我们的关系发展的实在是太迅速啦</span><br />
+                <span class="comments">// And take care of u and our love.</span><br />
+                i.takeCareOf(u);<br />
+                <span class="comments">// 所以我一直在等待，我有信心，你会。</span><br />
+                <span class="keyword">boolean</span> isAccept = <span class="keyword">false</span>;<br />
+                <span class="keyword">while</span> (isAccept) {<br />
+                <span class="placeholder"/>i.waitFor(u);<br />
+                <span class="placeholder"/><span class="comments">// 今天，我觉得是一个重要的决定</span><br />
+                <span class="placeholder"/><span class="comments">// 你应该忘记之前发生的不愉快的事情。</span><br />
+                <span class="placeholder"/>isAccept = u.thinkOver();<br />
+                }<br />
+                <span class="comments">//如果你接受我，我们将会生活幸福快乐的日子。</span><br />
+                u.accept(i);<br />
+                i.liveHappilyWith(u);<br />
+
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+<center>
+哼哼哈嘿，兴哥的真实语录
+</center>
+                        小雨，我将会等着你爱我
+                        <div id="elapseClock" style="display:none"></div>
+                        <a href='index3.html' id="accept">如果你接受我，请点击这里</a>
+                    </div>
+                    <div id="loveu">
+                        爱你，直到永永远远。<br/>
+                        <div class="signature">- boy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                adjustWordsPosition();
+                startHeartAnimation();
+            }, 10000);
+            
+            $("#accept").click(function(){
+                $(this).hide();
+                $("#elapseClock").show();
+                var together = new Date();
+                timeElapse(together);
+                setInterval(function () {
+                    timeElapse(together);
+                }, 500);
+            })
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+<!--happy place-->
+<embed src="happy place.mp3" hidden="true" autostart="true" loop="true">
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;btn=r5.gif" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div1">Hello</div>
+    <script>
+        //元素节点
+        var div1 = document.getElementById("div1");
+        //alert(div1.nodeName);//元素节点名称是：DIV
+        //alert(div1.nodeValue);//所有的元素节点都没有节点值，返回null
+        //alert(div1.nodeType);//所有的元素节点的节点类型都返回1
+        //属性节点
+        var node2 = div1.getAttributeNode("id");//获取到div1的属性节点
+        //alert(node2.nodeName);//id
+        //alert(node2.nodeValue);//div1
+        //alert(node2.nodeType);//2
+        var node3 = div1.firstChild;//div的第一个孩子
+          alert(node3.nodeName)//所有的文本节点的名称都返回#text
+          alert(node3.nodeValue)//Hello
+          alert(node3.nodeType)//3
+    </script>
+</body>
+</html>

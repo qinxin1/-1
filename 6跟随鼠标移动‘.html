@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Untitled Document</title>
+
+</head>
+<script>
+    document.onmousemove = function (ev1) {
+        var oDiv = document.getElementById('div1');
+        var e = ev1 || window.event;
+        oDiv.innerHTML = "X:" + e.clientX + ",Y:" + e.clientY;
+        oDiv.style.left = e.clientX + "px";
+        oDiv.style.top = e.clientY + "px";
+        oDiv.style.position = "absolute";
+    }
+</script>
+<body style="height:2000px;">
+<div id="div1" style="width:100px;height:100px; background:red; position:absolute; top:0; margin:0;"></div>
+
+
+</body>
+</html>

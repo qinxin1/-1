@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>留言板</h1>
+<input type="text"/>
+<button onclick = 'fun()'>发布</button>
+<button id="shanchuquanbu" onclick="shanchuquanbu1()" >删除全部</button>
+<ul style="border:1px red solid ;width: 300px;">
+
+</ul>
+<script>
+    var tex = document.getElementsByTagName('input');
+    var ul = document.getElementsByTagName('ul');
+    function fun(){
+        var li = document.createElement('li');
+        li.innerHTML = tex[0].value + "<button onclick = 'del(this)'> 删除</button>";
+        tex[0].value ='';
+        ul[0].appendChild(li);
+    }
+    function del(t){
+        ul[0].removeChild(t.parentNode);
+    }
+
+    var shanchuquanbu = document.getElementById("shanchuquanbu");
+    var shanchuquanbu1 = function () {
+        var otr = document.getElementsByTagName("li");
+        for (var i = 0; i < otr.length; i++) {
+            ul[i].removeChild(otr[i]);
+            i--;
+        }
+    }
+    </script>
+</body>
+</html>

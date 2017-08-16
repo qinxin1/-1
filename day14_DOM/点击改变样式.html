@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p id="txt"style="border: 5px solid deeppink">我的天哪</p>
+<input type="button"value="点击"onclick="bian()"/>
+<br/>
+男：<input type="radio"name="gender"/>
+女：<input type="radio"name="gender"/>
+<script>
+    var txt = document.getElementById("txt");
+    function bian(){
+        txt.style.color="red";
+//        txt.style.display="none";
+        txt.style.fontSize=30+"px";
+        txt.style.title="woqu";
+    }
+//    var gender = document.getElementsByName("gender");
+//    document.write(gender[1]);
+      var ipt = document.getElementsByTagName("input");
+      ipt[0].style.borderColor = "red";
+      alert(ipt[1].getAttribute("type"));
+      ipt[1].setAttribute("type",'text');
+      txt.removeAttribute("border");
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <ul>
+        <li><input type="checkbox" id="qx" onclick="xuan()"/>全选
+            <input type="checkbox" id="Checkbox1" onclick="fan()"/>反选
+        </li>
+         <li><input type="checkbox" name="dx"/>单选</li>
+         <li><input type="checkbox" name="dx"/>单选</li>
+         <li><input type="checkbox" name="dx"/>单选</li>
+         <li><input type="checkbox" name="dx"/>单选</li>
+         <li><input type="checkbox" name="dx"/>单选</li>
+         <li><input type="checkbox" name="dx"/>单选</li>
+    </ul>
+    <script>
+        function xuan() {
+            var qx = document.getElementById("qx");
+            var dx = document.getElementsByName("dx");
+            //alert(qx.checked);
+            for (var i = 0; i < dx.length; i++) {
+                dx[i].checked = true;
+            }
+        }
+        function fan() {
+            var dx = document.getElementsByName("dx");
+            for (var i = 0; i < dx.length; i++) {
+                if (dx[i].checked) {
+                    dx[i].checked = false;
+                }
+                else {
+                    dx[i].checked = true;
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

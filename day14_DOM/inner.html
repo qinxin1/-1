@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="d" class="c" data-m="mm">
+        ggggg
+        <div>dddd
+            <div>hhhh</div>
+        </div>
+        <input type="text"/>
+        <div>dddd</div>
+    </div>
+    <img src="" alt=""id="img"width="300px"/>
+    <input type="button"id="h"value="gaga"/>
+
+    <script>
+        //innerHTML,能够获取开始标签与结束标签之间的所有内容（包括标签与文本）,只能用于双标签。
+        var d = document.getElementById("d");
+//        alert(d.innerHTML);
+        //innerText,能够获取开始标签与结束标签之间的文本内容，只能用于双标签。
+//        alert(d.innerText);
+//        alert(d.className);
+        alert(d.getAttribute("data-m"));
+//        alert(d.data-m);
+        document.getElementById("img").setAttribute("img","img2.jpg");
+        document.getElementById("h").removeAttribute("value");
+
+
+    </script>
+</body>
+</html>

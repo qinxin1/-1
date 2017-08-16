@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        dl {
+            width: 400px;
+            margin: 20px auto;
+            border: 1px solid red;
+            cursor: pointer;
+        }
+
+        dt {
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        dd {
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt id="btn">请选择</dt>
+    <dd>选项一</dd>
+    <dd>选项二</dd>
+    <dd>选项一</dd>
+    <dd>选项二</dd>
+    <dd>选项一</dd>
+    <dd>选项二</dd>
+    <dd>选项一</dd>
+    <dd>选项二</dd>
+</dl>
+<script>
+    var btn = document.getElementById('btn');
+    var dd = document.getElementsByTagName('dd');
+    btn.onclick=function(evt){
+        var e = evt||window.event;
+        if(e.stopPropagation){
+            e.stopPropagation()
+        }else{
+            e.cancelBubble=true;
+        }
+        for (var i = 0; i < dd.length; i++) {
+            dd[i].style.display = 'block';
+        }
+    }
+    document.onclick = function(){
+        for (var i = 0; i < dd.length; i++) {
+            dd[i].style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>

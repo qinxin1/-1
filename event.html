@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var div1 = document.getElementById("div1");
+            var txt1 = document.getElementById("txt1");
+            div1.onmouseover = function () {
+                div1.style.background = "green";
+            };
+            div1.onmouseout = function () {
+                div1.style.background = "#000";
+            };
+            div1.ondblclick = function () {
+                div1.style.background = "red";
+            };
+            div1.onmousedown = function () {
+                div1.style.height = "300px";
+                div1.style.width = "300px";
+            };
+            div1.onmouseup = function () {
+                div1.style.height = "200px";
+                div1.style.width = "200px";
+            };
+            //按下键盘的时候会发生什么
+            txt1.onkeydown = function () {
+                div1.style.display = "none";
+                this.value = "按钮";
+            };
+            txt1.onkeyup = function () {
+                div1.style.display = "block";
+                this.value = "我又出来了";
+            };
+            var txt2 = document.getElementById("txt2");
+            txt2.onkeypress = function () {
+                this.value = "自动出字";
+            }
+        };
+        //        display:none,block,inline,inline-block;
+
+    </script>
+    <style>
+        #div1 {
+            height: 200px;
+            width: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<input type="button" id="txt1"/>
+<input type="txt" id="txt2"/>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #adv{
+            width:200px;
+            height:200px;
+            border:1px solid #000000;
+            position:fixed;
+            bottom:-202px;
+            right:0px;
+        }
+        #advtitle{
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+<div id="adv">
+    <div id="advtitle"><a href="javascript:closeadv();"id="closebtn">X</a></div>
+</div>
+</body>
+<script>
+    var initbottom = -202;
+    function myonload(){
+        document.getElementById('closebtn').onclick = closeadv;
+        var adv = document.getElementById("adv");
+        var interval;
+            interval=setInterval(function(){
+            adv.style.bottom=(initbottom++)+'px';
+                if(initbottom==0){
+                    clearInterval(interval);
+                    setTimeout('closeadv()',2000);
+                }
+            },10);
+    }
+    function closeadv(){
+        var adv = document.getElementById("adv");
+        var interval;
+        interval=setInterval(function(){
+            adv.style.bottom=(initbottom--)+'px';
+            if(initbottom==-202){
+                clearInterval(interval);
+            }
+        },10);
+    }
+    window.onload = myonload;
+
+
+</script>
+</html>

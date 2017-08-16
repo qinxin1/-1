@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+   <input type="checkbox" id="ch"/>
+    <input type="button" value="选中" onclick="xuanzhong()"/>
+      <input type="button" value="取消" onclick="quxiao()"/>
+    <script>
+        function xuanzhong() {
+            var ch = document.getElementById("ch");
+//            ch.checked = "checked";
+            ch.setAttribute("checked","true");
+        }
+        function quxiao() {
+            var ch = document.getElementById("ch");
+            ch.checked = null;
+        }
+    </script>
+</body>
+    
+</html>

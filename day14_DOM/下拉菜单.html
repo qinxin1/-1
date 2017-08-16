@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,html{
+            height:100%;
+        }
+        #menu1,#menu2,#menu3{
+            height:5%;
+            line-height:30px;
+            width:20%;
+            background: #b1ffe5;
+            border:1px solid #ccc;
+            text-align:center;
+        }
+        #xiala1 ,#xiala2 ,#xiala3 {
+            list-style:none;
+            border:1px solid #ccc;
+            /*height:3%;*/
+            width:20%;
+            background: #c4fff7;
+            display:none;
+        }
+        li{
+            height:3%;
+            width:100%;
+            border:1px solid #ccc;
+        }
+        a{
+            text-decoration:none;
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu1"><a href="javascript:;"onclick="dianji();">青春日记本
+    </a></div>
+    <div id="xiala1">
+    <li><a href="javascript:"> 2013</a></li>
+    <li><a href="javascript:">2014</a></li>
+    <li><a href="javascript:">2015</a></li>
+    </div>
+    <div id="menu2"><a href="javascript:onclick();">青春相册
+    </a></div>
+    <div id="xiala2">
+    <li><a href="javascript:">2013</a></li>
+    <li><a href="javascript:">2014</a></li>
+    <li><a href="javascript:">2015</a></li>
+    </div>
+    <div id="menu3"><a href="javascript:onclick();">青春印记
+    </a></div>
+    <div id="xiala3">
+    <li><a href="javascript:">2013</a></li>
+    <li><a href="javascript:">2014</a></li>
+    <li><a href="javascript:">2015</a></li>
+    </div>
+    <script>
+            var a=true;
+             function dianji() {
+               var menu1= document.getElementById("menu1");
+                if(a==true){
+                document.getElementById("xiala1").style.display = "inline-block";
+                 a=false;}
+                else{
+                    document.getElementById("xiala1").style.display = "none";
+                    a=true;
+                }
+            }
+            document.getElementById("menu2").onclick = function () {
+                document.getElementById("xiala2").style.display = "inline-block";
+            }
+            document.getElementById("menu3").onclick = function () {
+                document.getElementById("xiala3").style.display = "inline-block";
+            }
+    </script>
+</body>
+</html>

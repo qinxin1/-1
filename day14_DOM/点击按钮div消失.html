@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width:300px;
+            height:300px;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="button"value="我要变身"onclick="bs()"/>
+
+</form>
+<div id="div1"></div>
+    <script>
+        var div1 = document.getElementById("div1");
+        var t = true;
+        function bs(){
+//            if(div1.style.display=="none"){
+//                div1.style.display="block";
+//            }else{
+//                div1.style.display="none";
+//            }
+            if(t==true){
+                div1.style.display = "none";
+                t = false;
+            }else{
+                div1.style.display = "block";
+                t = true;
+            }
+        }
+    </script>
+
+</body>
+</html>

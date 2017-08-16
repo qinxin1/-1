@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="div">文字</div>
+    <input type="button"value="换色"onclick="hs()"/>
+    <input type="button"value="隐藏"onclick="yc()"/>
+    <script>
+        var r = ["red","green","yellow","pink","black"];
+        var div = document.getElementById("div");
+        function hs(){
+        var sjs = parseInt(Math.random()*(r.length));
+        div.style.color = r[sjs];
+            //div.style.display = "block";
+        }
+        div.style.fontSize="50px";
+        function yc(){
+            if(div.style.display == "none"){
+                div.style.display = "block";
+            }else{
+            div.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

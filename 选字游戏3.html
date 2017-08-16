@@ -1,0 +1,195 @@
+d<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+body,html{
+	height: 100%;
+}
+#wrap{
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+	height: 100%;
+	min-height: 500px;
+	max-height: 600px;
+	border: 1px solid red;
+}
+#dao{
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	font-size: 2em;
+}
+#wan{
+	position: absolute;
+	top: 20px;
+	font-size: 2em;
+	right: 20px;
+}
+#show{
+	font-size: 10em;
+	top: 90px;
+	left: 120px;
+	position: absolute;
+}
+#menu{
+	padding: 40px;
+	font-size: 2em;
+	top: 250px;
+	position: absolute;
+}
+#ul1{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	list-style: none;
+}
+#ul1 li{
+	float: left;
+	font-size: 5em;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="dao">剩余时间：50</div>
+	<div id="wan">完成：0</div>
+	<div id="show">红</div>
+	<div id="menu">根据上面的字的颜色从下面选择正确的字，选择正确自动开始</div>
+	<ul id="ul1">
+		<li>绿</li>
+		<li>蓝</li>
+		<li>黑</li>
+		<li>黄</li>
+		<li>红</li>
+	</ul>
+</div>
+</body>
+<script type="text/javascript">
+	var show = document.querySelector("#show");
+	var lis  = document.querySelectorAll("#ul1>li");
+	var menu = document.querySelector("#menu");
+	var wan = document.querySelector("#wan");
+	var dao = document.querySelector("#dao");
+	
+	var colors = ["red","green","blue","yellow","black"];
+	var fonts = ["红","绿","蓝","黄","黑"];
+	
+	var num = 0;
+	
+	var showColorR;
+	
+	var countDown = 50;
+	var timerBol = false;
+	var clickBol = true;
+	
+	function gameOver(){
+		if (num<5){
+			alert("色盲，你该去吃药！！");
+		}else if (num<8){
+			alert("色弱,洗洗眼睛再来吧！");
+		}else if (num<15){
+			alert("你的智商超过5%的人了！！需要充值！");
+		}else if(num<25){
+			alert("少年仍需努力！！！");
+		}else{
+			alert("厉害了我的哥")
+		}
+		
+	}
+	
+	var timer = setInterval(function (){
+		
+		if (timerBol){
+			countDown--;
+			dao.innerHTML = "剩余时间："+countDown;
+			if (countDown<=0){
+				gameOver();
+				clickBol = false;
+				clearInterval(timer);
+			}
+		}
+		
+	},1000);
+	
+	function randFn(min,max){
+		return parseInt(Math.random()*(max-min))+min;
+	}
+	
+	function showRand(){
+		//坑
+		showColorR = randFn(0,5);
+		var showFontR  = randFn(0,5);
+		
+		show.style.color = colors[showColorR];
+		show.innerHTML = fonts[showFontR];
+	}
+	
+	function smallArr(){
+		
+		var arr = [];
+		
+		while(arr.length<5){
+			var r = randFn(0,5);
+			var bol = true;
+			
+			for (var i=0; i<arr.length; i++){
+				if (arr[i]==r){
+					bol = false;
+					break;
+				}
+			}
+			if (bol){
+				arr.push(r);
+			}
+		}
+		
+		return arr;
+	}
+	
+	function textRand(){
+		var colorArr = smallArr();
+		var fontArr = smallArr();
+		
+		for (var i=0; i<colorArr.length; i++){
+			lis[i].style.color = colors[colorArr[i]];
+			lis[i].innerHTML = fonts[fontArr[i]];
+			lis[i].fontIndex = fontArr[i];
+		}
+	}
+	
+	showRand();
+	textRand();
+	
+	for (var i=0; i<lis.length; i++){
+		lis[i].onclick = function (){
+//			alert(this.style.color);
+			if (showColorR==this.fontIndex&&clickBol){
+//				alert("点对了");
+				timerBol = true;
+				menu.style.display = "none";
+				showRand();
+				textRand();
+				num++;
+				
+				wan.innerHTML="完成："+num;
+			}
+		}
+	}
+</script>
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            height:300px;
+            width:300px;
+            background:yellow;
+            position:absolute;
+            top:100px;
+            left:100px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    var div1 = document.getElementById("div1");
+    div1.onclick = function(event){
+        var evt = event||window.event;
+        console.log("x:"+evt.clientX+","+"y:"+evt.clientY);//页面内容部分
+        console.log("x:"+evt.offsetX+","+"y:"+evt.offsetY);//盒子
+        console.log("x:"+evt.screenX+","+"y:"+evt.screenY);//屏幕
+    }
+</script>
+</body>
+</html>

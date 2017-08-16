@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box {
+				width: 760px;
+				height: 245px;
+				float: left;
+				border: #888 solid 2px;
+				margin-right: 30px;
+			}
+			
+			#layer {
+				font-family: Verdana;
+				font-size: 200px;
+				color: #888;
+			}
+			
+			#btn {
+				float: left;
+				font-family: arial;
+				color: #14396A !important;
+				font-size: 30px;
+				padding: 14px 28px;
+				margin-top: 90px;
+				background: #63B8EE;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<span id="layer">000000</span>
+		</div>
+		<div>
+			<input type="button" value='生成随机数' id="btn" />
+		</div>
+	</body>
+	<script>
+		var rand_btn = document.getElementById("btn");
+		rand_btn.onclick = function() {
+			Lottery();
+			clock = setTimeout('clearTimeout(T)', 1000);
+		}
+
+		function Lottery() {
+			var Num = Math.floor((Math.random() * 900000 + 100000));
+			var result = document.getElementById("layer");
+			if(result != null) {
+				result.innerHTML = Num;
+			}
+			T = setTimeout('Lottery()', 10);
+		}
+	</script>
+
+</html>

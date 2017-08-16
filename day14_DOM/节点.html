@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p id="demo">请点击按钮来获得 body 元素子节点的节点类型。</p>
+<button onclick="myFunction()">试一下</button>
+<script>
+//    function myFunction(){
+//        var txt="";
+//        var no  ="";
+//        var c=document.body.childNodes;
+//        for (i=0; i<c.length; i++) {
+//            no= c[i].nodeName ;
+//            txt= c[i].nodeType + "<br>";
+//            var x=document.getElementById("demo");
+//            x.innerHTML+=no+"&nbsp"+txt+" ";}
+//        }
+//    document.body.nodeName;
+    function myFunction(){
+        var txt="";
+        var c=document.body.childNodes;
+       // alert(c[0].getAttribute());
+
+        for (i=0; i<c.length; i++) {
+
+            txt=txt + c[i].nodeName +";"+ "<br>"; };
+        var x=document.getElementById("demo");
+        x.innerHTML=txt;}
+
+
+</script>
+</body>
+</html>

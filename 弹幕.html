@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text"  id="txt" value="" />
+		<input type="button"  id="btn" value="发送" />
+		<script type="text/javascript">
+	   var txt=document.getElementById("txt")
+	   var btn=document.getElementById("btn")
+	   btn.onclick=function(){
+	   	var p1=document.createElement("p")
+	   	p1.innerHTML=txt.value
+	   	p1.style.top=suiji(60,400)+"px"
+	   	p1.style.color="rgb("+suiji(0,225)+","+suiji(0,225)+","+suiji(0,225)+")";
+	    p1.style.fontSize=suiji(8,32)+"px"
+	   var a=1
+	   function run(){
+	   	a++;
+	   	if(a>1000){
+	   		clearInterval(inter)
+	   		document.body.removeChild(p1)
+	   	}
+	   	p1.style.left=a+"px"
+	   }
+
+	   var inter=setInterval(run,20);
+
+	   document.body.appendChild(p1)
+	   }
+	   function suiji(m,n){
+	   	return Math.floor(Math.random()*(n-m+1)+m)
+	   }
+		</script>
+	</body>
+</html>
